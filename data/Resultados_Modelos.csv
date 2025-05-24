@@ -1,0 +1,21 @@
+Client_ID,Anomalías ISO,Coincidencias con LSTM (cualquier variable),% Coincidencia
+Client_1,210,136,64.76
+Client_10,41,18,43.9
+Client_11,12,12,100.0
+Client_12,193,81,41.97
+Client_13,30,29,96.67
+Client_14,218,161,73.85
+Client_15,48,46,95.83
+Client_16,0,0,0.0
+Client_17,211,4,1.9
+Client_18,183,116,63.39
+Client_19,207,182,87.92
+Client_2,148,146,98.65
+Client_20,210,146,69.52
+Client_3,40,17,42.5
+Client_4,202,167,82.67
+Client_5,209,163,77.99
+Client_6,208,191,91.83
+Client_7,81,23,28.4
+Client_8,0,0,0.0
+Client_9,27,20,74.07

@@ -1,0 +1,16 @@
+numpy
+pandas
+openpyxl
+matplotlib
+scipy
+seaborn
+scikit-learn
+tensorflow
+dash
+dash-bootstrap-components
+plotly
+fastapi
+uvicorn
+python-multipart
+pydantic
+requests
