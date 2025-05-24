@@ -6,9 +6,11 @@ import base64
 import io
 import requests
 from datetime import datetime
-
+import os
 # URL de la API
-API_URL = "http://localhost:8000"  # Cambiar según donde esté desplegada la API
+API_URL = os.environ.get("API_URL", "http://localhost:8000")
+## URL de la API
+#API_URL = "http://localhost:8000"  # Cambiar según donde esté desplegada la API
 
 def layout3():
     return html.Div([

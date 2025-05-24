@@ -249,4 +249,7 @@ def procesar_nuevos_datos(df, cliente_id, ventana=24, pasos_futuros=24):
     return y_pred_inv, fechas_pred, y_futuro_inv, fechas_futuro
 
 if __name__ == "__main__":
-    uvicorn.run("api:app", host="0.0.0.0", port=8000, reload=True)
+    import os
+    port = int(os.environ.get("PORT", 8000))
+    import uvicorn
+    uvicorn.run("api:app", host="0.0.0.0", port=port)
