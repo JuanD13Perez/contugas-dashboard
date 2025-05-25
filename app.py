@@ -12,7 +12,7 @@ app.title = "Contugas - Dashboard"
 server = app.server
 
 # Cargar datos
-df = pd.read_csv("Data/Datos_Contugas_Compacted.csv", parse_dates=["Fecha"])
+df = pd.read_csv("data/Datos_Contugas_Compacted.csv", parse_dates=["Fecha"])
 
 # Diccionario de rutas a etiquetas
 routes = {
