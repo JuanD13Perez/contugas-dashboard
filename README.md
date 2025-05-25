@@ -13,7 +13,7 @@ Este proyecto es una solución integral para el análisis, modelamiento y visual
 
 En la raíz encontrarás dos archivos PDF:
 
-- **Manual_de_usuario.pdf:** Guía paso a paso para usuarios finales.
+- **Manual de Usuario Dash Contugas.pdf:** Guía paso a paso para usuarios finales.
 - **Presentacion_Empresarial.pdf:** Presentación ejecutiva del proyecto.
 
 Adicional, te compartimos:
@@ -48,7 +48,7 @@ Adicional, te compartimos:
 │ ├── ss1.png # Screenshot Análisis Histórico
 │ ├── ss2.png # Screenshot Detección de Anomalías
 │ └── ss3.png # Screenshot Modelamiento
-├── Manual_de_usuario.pdf
+├── Manual de Usuario Dash Contugas.pdf
 └── Presentacion_Empresarial.pdf
 ```
 
@@ -148,6 +148,6 @@ Abre esa dirección en tu navegador para acceder al Dashboard.
 
 ## Documentación Adicional
 Para descripciones de negocio y presentación empresarial, consulta los archivos PDF incluidos en la raíz del repositorio:
-- `Manual_de_usuario.pdf`
+- `Manual de Usuario Dash Contugas.pdf`
 - `Presentacion_Empresarial.pdf`
 
