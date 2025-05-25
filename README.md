@@ -27,12 +27,15 @@ En la raíz encontrarás dos archivos PDF:
 ├── layout2.py
 ├── layout3.py
 ├── requirements.txt # Dependencias del proyecto
-├── lstm_models.pkl # Modelos preentrenados
+├── models/
+│ ├── lstm_models.pkl # Modelos preentrenados
+│ └── Save Model.ipynb # Notebook usado para guardar modelos
 ├── data/
-│ ├── Datos_Contugas_Compacted.csv
-│ ├── predicted_with_anomalies_and_future.csv
-│ ├── Errores.csv
-│ └── Resultados_Modelos.csv
+│ ├── Datos_Contugas_Compacted.csv # Datos comprimidos
+│ ├── predicted_with_anomalies_and_future.csv # Datos totales
+│ ├── Errores.csv # Tabla de errores del modelo
+│ ├── Resultados_Modelos.csv # Tabla de comparación de los modelos
+│ └── ejemplo_datos_2024-01-01.xslx # Archivo de Excel de ejemplo para Tab de modelado
 ├── assets/
 │ ├── ContugasBanner.png
 │ ├── uniandes.png
@@ -131,7 +134,7 @@ Abre esa dirección en tu navegador para acceder al Dashboard.
 
 
 ### 📈 Modelamiento
-- Permite cargar un archivo Excel y mostrar predicciones basadas en el modelo LSTM histórico.
+- Permite cargar un archivo Excel y mostrar predicciones basadas en el modelo LSTM histórico. (Puede usar por ejemplo `data/ejemplo_datos_2024-01-01.xslx`)
 - Incluye un botón para testear la API directamente desde el dashboard.
 
 ![Modelamiento](assets/ss3.png)
