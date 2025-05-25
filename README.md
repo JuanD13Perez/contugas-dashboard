@@ -20,8 +20,7 @@ En la raíz encontrarás dos archivos PDF:
 
 ## Estructura del repositorio
 
-
-/
+```
 ├── app.py # Dashboard principal (Dash)
 ├── api.py # API de predicción (FastAPI)
 ├── layout1.py
@@ -43,5 +42,4 @@ En la raíz encontrarás dos archivos PDF:
 │ └── ss3.png # Screenshot Modelamiento
 ├── Manual_de_usuario.pdf
 └── Presentacion_Empresarial.pdf
-
-
+```
