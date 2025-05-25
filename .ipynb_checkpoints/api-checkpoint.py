@@ -32,12 +32,12 @@ except Exception as e:
     modelos = {}
 
 # Cargar datos históricos
-try:
-    df_historico = pd.read_csv("data/predicted_with_anomalies_and_future.csv", parse_dates=["Fecha"])
-    print(f"Datos históricos cargados: {len(df_historico)} registros")
-except Exception as e:
-    print(f"Error al cargar datos históricos: {str(e)}")
-    df_historico = pd.DataFrame()
+# try:
+#     df_historico = pd.read_csv("data/predicted_with_anomalies_and_future.csv", parse_dates=["Fecha"])
+#     print(f"Datos históricos cargados: {len(df_historico)} registros")
+# except Exception as e:
+#     print(f"Error al cargar datos históricos: {str(e)}")
+#     df_historico = pd.DataFrame()
 
 # Definir modelos de datos
 class PredictionRequest(BaseModel):
@@ -59,49 +59,49 @@ def get_clients():
     """Obtener lista de clientes disponibles"""
     return {"clients": list(modelos.keys())}
 
-@app.get("/historical-data/{client_id}")
-def get_historical_data(client_id: str, days: int = 30):
-    """Obtener datos históricos y estadísticas de anomalías para un cliente"""
-    if df_historico.empty:
-        raise HTTPException(status_code=500, detail="No se han cargado los datos históricos")
+# @app.get("/historical-data/{client_id}")
+# def get_historical_data(client_id: str, days: int = 30):
+#     """Obtener datos históricos y estadísticas de anomalías para un cliente"""
+#     # if df_historico.empty:
+#     #     raise HTTPException(status_code=500, detail="No se han cargado los datos históricos")
     
-    # Filtrar datos para el cliente
-    df_cliente = df_historico[df_historico["Client_ID"] == client_id]
+#     # Filtrar datos para el cliente
+#     df_cliente = df_historico[df_historico["Client_ID"] == client_id]
     
-    if df_cliente.empty:
-        raise HTTPException(status_code=404, detail=f"No hay datos históricos para el cliente {client_id}")
+#     if df_cliente.empty:
+#         raise HTTPException(status_code=404, detail=f"No hay datos históricos para el cliente {client_id}")
     
-    # Obtener datos del último mes (o los días especificados)
-    fecha_max = df_cliente["Fecha"].max()
-    fecha_inicio = fecha_max - pd.Timedelta(days=days)
-    df_reciente = df_cliente[df_cliente["Fecha"] >= fecha_inicio]
+#     # Obtener datos del último mes (o los días especificados)
+#     fecha_max = df_cliente["Fecha"].max()
+#     fecha_inicio = fecha_max - pd.Timedelta(days=days)
+#     df_reciente = df_cliente[df_cliente["Fecha"] >= fecha_inicio]
     
-    # Calcular estadísticas de anomalías
-    df_anomalias = df_reciente[df_reciente["Anomaly"] == -1]
-    num_anomalias = len(df_anomalias)
+#     # Calcular estadísticas de anomalías
+#     df_anomalias = df_reciente[df_reciente["Anomaly"] == -1]
+#     num_anomalias = len(df_anomalias)
     
-    # Calcular promedios de variables para anomalías
-    promedios = {}
-    if num_anomalias > 0:
-        for var in ["Presion_actual", "Temperatura_actual", "Volumen_actual"]:
-            promedios[var.replace("_actual", "")] = float(df_anomalias[var].mean())
+#     # Calcular promedios de variables para anomalías
+#     promedios = {}
+#     if num_anomalias > 0:
+#         for var in ["Presion_actual", "Temperatura_actual", "Volumen_actual"]:
+#             promedios[var.replace("_actual", "")] = float(df_anomalias[var].mean())
     
-    # Preparar datos históricos para enviar
-    datos_historicos = []
-    for _, row in df_reciente.iterrows():
-        datos_historicos.append({
-            "Fecha": row["Fecha"].isoformat(),
-            "Presion": float(row["Presion_actual"]),
-            "Temperatura": float(row["Temperatura_actual"]),
-            "Volumen": float(row["Volumen_actual"]),
-            "Anomaly": int(row["Anomaly"])
-        })
+#     # Preparar datos históricos para enviar
+#     datos_historicos = []
+#     for _, row in df_reciente.iterrows():
+#         datos_historicos.append({
+#             "Fecha": row["Fecha"].isoformat(),
+#             "Presion": float(row["Presion_actual"]),
+#             "Temperatura": float(row["Temperatura_actual"]),
+#             "Volumen": float(row["Volumen_actual"]),
+#             "Anomaly": int(row["Anomaly"])
+#         })
     
-    return {
-        "historical_data": datos_historicos,
-        "anomaly_count": num_anomalias,
-        "anomaly_averages": promedios
-    }
+#     return {
+#         "historical_data": datos_historicos,
+#         "anomaly_count": num_anomalias,
+#         "anomaly_averages": promedios
+#     }
 
 @app.post("/predict", response_model=PredictionResponse)
 async def predict(request: PredictionRequest):
