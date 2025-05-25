@@ -6,7 +6,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 
 # Cargar datos
-full_df = pd.read_csv("Data/Datos_Contugas_Compacted.csv", parse_dates=["Fecha"])
+full_df = pd.read_csv("data/Datos_Contugas_Compacted.csv", parse_dates=["Fecha"])
 
 # Opciones para el filtro de agregación
 AGG_OPTIONS = {
