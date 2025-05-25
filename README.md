@@ -16,6 +16,8 @@ En la raíz encontrarás dos archivos PDF:
 - **Manual_de_usuario.pdf:** Guía paso a paso para usuarios finales.
 - **Presentacion_Empresarial.pdf:** Presentación ejecutiva del proyecto.
 
+Adicional, te compartimos:
+- [**Youtube**](https://www.youtube.com/watch?v=HRvrkporpgo&t=8s): Video de presentación del proyecto
 ---
 
 ## Estructura del repositorio
@@ -30,6 +32,9 @@ En la raíz encontrarás dos archivos PDF:
 ├── models/
 │ ├── lstm_models.pkl # Modelos preentrenados
 │ └── Save Model.ipynb # Notebook usado para guardar modelos
+├── model_Notebook/
+│ ├── Datos_Contugas.xslx # Datos originales
+│ └── VA_Reporte de Selección y Parametrización de Modelos para Contugas.ipynb # Notebook análisis de datos y desarrollo de modelos
 ├── data/
 │ ├── Datos_Contugas_Compacted.csv # Datos comprimidos
 │ ├── predicted_with_anomalies_and_future.csv # Datos totales
